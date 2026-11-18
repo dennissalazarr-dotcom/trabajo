@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #080b14;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+.barra {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 25px;
+  background: #101421;
+  border-radius: 15px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #bd58ff;
+}
+
+nav { display: flex; gap: 25px; }
+nav a, .titulo-seccion a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+button, .boton, .boton-comprar {
+  border: 0;
+  color: white;
+  background: linear-gradient(90deg, #8d25ec, #bd27d9);
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+main { max-width: 1150px; margin: 25px auto; }
+
+.portada {
+  min-height: 390px;
+  background: linear-gradient(110deg, #101426, #170b2d);
+  border: 1px solid #24283a;
+  border-radius: 18px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.texto-portada { max-width: 480px; }
+.etiqueta {
+  display: inline-block;
+  background: #29203c;
+  color: #e7b4ff;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+h1 { font-size: 42px; line-height: 1.2; margin-bottom: 18px; }
+h1 span { color: #a83cff; }
+.texto-portada > p:not(.etiqueta) {
+  color: #c3c5d0;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.oscuro { background: #171b2a; margin-left: 8px; border: 1px solid #33394b; }
+
+.imagen-portada { width: 45%; position: relative; }
+.imagen-portada img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.descuento {
+  position: absolute;
+  right: -10px;
+  top: 45%;
+  background: #a323ed;
+  border-radius: 50%;
+  padding: 18px;
+  text-align: center;
+  font-size: 12px;
+}
+.descuento b { font-size: 24px; }
+
+section:not(.portada) { margin-top: 40px; }
+.titulo-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.titulo-seccion h2 { font-size: 25px; }
+.titulo-seccion a { color: #b45aff; }
+
+.productos, .categorias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.tarjeta {
+  background: #151a29;
+  border: 1px solid #252b3c;
+  border-radius: 15px;
+  padding: 18px;
+  position: relative;
+}
+.tarjeta img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  margin: 8px 0;
+  border-radius: 10px;
+}
+.tarjeta p { color: #aeb3c2; font-size: 13px; margin: 6px 0; }
+.tarjeta h3 { margin: 5px 0; }
+.tarjeta .estrellas { color: orange; }
+.estrellas small { color: #aaa; }
+.tarjeta button { float: right; border-radius: 50%; padding: 10px; }
+.etiqueta.violeta, .etiqueta.rosa, .etiqueta.azul {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: white;
+}
+.violeta { background: #8127df; }
+.rosa { background: #db238c; }
+.azul { background: #315fe8; }
+
+.categorias { grid-template-columns: repeat(4, 1fr); }
+.categoria {
+  min-height: 185px;
+  border-radius: 15px;
+  padding: 20px;
+  overflow: hidden;
+}
+.categoria span { font-size: 28px; }
+.categoria h3 { margin: 12px 0 7px; }
+.categoria p { color: #ddd; font-size: 13px; margin-bottom: 15px; }
+.categoria a { color: white; font-size: 13px; text-decoration: none; }
+.morado { background: #35145a; }
+.azul-fondo { background: #102b50; }
+.verde { background: #103b3a; }
+.naranja { background: #542512; }
+
+.oferta {
+  background: linear-gradient(100deg, #39105d, #171d4c);
+  border: 1px solid #65339b;
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.oferta h2 { margin-bottom: 10px; }
+.oferta p { color: #ddd; }
+.rosa-boton { background: #db168f; }
+
+.beneficios {
+  background: #151a29;
+  border-radius: 15px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.beneficios div { line-height: 1.8; }
+.beneficios p { color: #aaa; font-size: 12px; }
+footer { text-align: center; color: #888; padding: 25px; font-size: 13px; }
+
+@media (max-width: 750px) {
+  body { padding: 10px; }
+  .barra { flex-wrap: wrap; }
+  nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 15px; }
+  .portada { flex-direction: column; padding: 25px; }
+  .imagen-portada { width: 100%; }
+  h1 { font-size: 32px; }
+  .productos { grid-template-columns: 1fr; }
+  .categorias { grid-template-columns: repeat(2, 1fr); }
+  .oferta { flex-direction: column; text-align: center; }
+  .beneficios { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================
+   Estilos de las secciones NUEVAS: Testimonios (carrusel) y Contacto.
+   Archivo aparte: no modifica estilos.css. Se carga después de él
+   y usa la misma paleta del diseño original.
+   ========================================================== */
+
+/* ---------- Testimonios + carrusel (Swiper) ---------- */
+.carrusel-testimonios {
+  --swiper-theme-color: #bd58ff;
+  --swiper-navigation-size: 16px;
+  --swiper-pagination-bullet-inactive-color: #5a5f78;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding: 0 55px 45px;
+}
+
+.testimonio {
+  height: auto;
+  background: #151a29;
+  border: 1px solid #252b3c;
+  border-radius: 15px;
+  padding: 22px;
+  transition: border-color .25s;
+}
+.testimonio:hover { border-color: #65339b; }
+
+.valoracion { color: orange; letter-spacing: 2px; }
+.comentario { color: #c3c5d0; font-size: 14px; line-height: 1.6; }
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #8d25ec, #bd27d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.cliente b { display: block; font-size: 14px; }
+.cliente small { color: #aeb3c2; font-size: 12px; }
+
+.carrusel-testimonios .swiper-button-prev,
+.carrusel-testimonios .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  top: calc(50% - 22px);
+  margin-top: -20px;
+  background: #171b2a;
+  border: 1px solid #33394b;
+  border-radius: 50%;
+}
+.carrusel-testimonios .swiper-button-prev { left: 5px; }
+.carrusel-testimonios .swiper-button-next { right: 5px; }
+
+/* ---------- Contacto + formulario ---------- */
+.contacto-info {
+  background: linear-gradient(100deg, #39105d, #171d4c);
+  border: 1px solid #65339b;
+  border-radius: 15px;
+  padding: 25px;
+  height: 100%;
+}
+.contacto-info h3 { font-size: 20px; margin-bottom: 12px; }
+.contacto-info > p { color: #ddd; line-height: 1.6; margin-bottom: 22px; }
+.contacto-info ul { list-style: none; }
+.contacto-info li { color: #ddd; font-size: 14px; line-height: 1.5; }
+.contacto-info li b { display: block; color: white; font-size: 13px; }
+
+.formulario {
+  background: #151a29;
+  border: 1px solid #252b3c;
+  border-radius: 15px;
+  padding: 25px;
+  height: 100%;
+}
+.formulario label { display: block; color: #aeb3c2; font-size: 13px; margin-bottom: 6px; }
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  background: #101421;
+  border: 1px solid #33394b;
+  border-radius: 8px;
+  color: white;
+  color-scheme: dark;
+  font: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.formulario textarea { min-height: 120px; resize: vertical; }
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #bd58ff;
+  box-shadow: 0 0 0 3px rgba(189, 88, 255, .25);
+}
+.formulario button {
+  width: 100%;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: filter .25s;
+}
+.formulario button:hover { filter: brightness(1.15); }
+.formulario button:focus-visible { outline: 2px solid #e7b4ff; outline-offset: 2px; }
+
+/* ---------- Responsive (mismo punto de quiebre del diseño original) ---------- */
+@media (max-width: 750px) {
+  .carrusel-testimonios { padding: 0 0 45px; }
+  .carrusel-testimonios .swiper-button-prev,
+  .carrusel-testimonios .swiper-button-next { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonio,
+  .formulario input,
+  .formulario select,
+  .formulario textarea,
+  .formulario button { transition: none; }
+}
+
+/* ---------- Imágenes locales (ruta relativa: carpeta img/) ---------- */
+.banner-testimonios {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #252b3c;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.imagen-contacto {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: 22px;
+}
+/* ==========================================================
+   EFECTOS: hover, transiciones, animaciones y botón flotante de WhatsApp.
+   Archivo aparte: NO modifica estilos.css. Se carga después de él
+   y actúa sobre las clases que ya existen en tu diseño.
+   ========================================================== */
+
+/* ---------- Transiciones (hacen suaves los hover) ---------- */
+nav a,
+.titulo-seccion a,
+.categoria a { transition: color .25s ease; }
+
+.boton,
+.boton-comprar,
+button { transition: transform .25s ease, filter .25s ease; }
+
+.tarjeta { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.tarjeta img { transition: transform .4s ease; }
+.categoria { transition: transform .3s ease, filter .3s ease; }
+.imagen-portada img { transition: transform .5s ease; }
+
+/* La etiqueta (Nuevo / Más vendido / Oferta) siempre queda sobre la imagen */
+.etiqueta.violeta,
+.etiqueta.rosa,
+.etiqueta.azul { z-index: 1; }
+
+/* ---------- Efectos hover (solo en dispositivos con mouse) ---------- */
+@media (hover: hover) {
+  /* 1. Enlaces del menú y de los títulos */
+  nav a:hover,
+  .titulo-seccion a:hover { color: #bd58ff; }
+  .categoria a:hover { color: #e7b4ff; }
+
+  /* 2. Botones: se elevan y brillan */
+  .boton:hover,
+  .boton-comprar:hover,
+  button:hover { transform: translateY(-2px); filter: brightness(1.15); }
+
+  /* 3. Tarjetas de producto: se elevan con brillo morado y la imagen se acerca */
+  .tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: #65339b;
+    box-shadow: 0 12px 30px rgba(141, 37, 236, .25);
+  }
+  .tarjeta:hover img { transform: scale(1.06); }
+
+  /* 4. Categorías: se elevan y se iluminan */
+  .categoria:hover { transform: translateY(-5px); filter: brightness(1.2); }
+
+  /* 5. Imagen de la portada: zoom suave */
+  .imagen-portada img:hover { transform: scale(1.03); }
+}
+
+/* ---------- Animaciones (@keyframes) ---------- */
+@keyframes entrar-desde-izquierda {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes aparecer-con-zoom {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+@keyframes onda-whatsapp {
+  0%   { box-shadow: 0 6px 18px rgba(0, 0, 0, .4), 0 0 0 0 rgba(37, 211, 102, .55); }
+  70%  { box-shadow: 0 6px 18px rgba(0, 0, 0, .4), 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 6px 18px rgba(0, 0, 0, .4), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Al cargar la página, la portada entra una sola vez */
+.texto-portada { animation: entrar-desde-izquierda .8s ease-out backwards; }
+.imagen-portada { animation: aparecer-con-zoom .8s ease-out .15s backwards; }
+/* La insignia del descuento late suavemente para llamar la atención */
+.descuento { animation: latido 2.6s ease-in-out infinite; }
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.whatsapp-flotante {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  font-size: 32px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+  animation: onda-whatsapp 2.2s ease-out infinite;
+  transition: transform .25s ease;
+}
+.whatsapp-flotante:hover { transform: scale(1.1); }
+.whatsapp-flotante:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+
+/* ---------- Respeta a quien prefiere menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .texto-portada,
+  .imagen-portada,
+  .descuento,
+  .whatsapp-flotante { animation: none; }
+
+  nav a, .titulo-seccion a, .categoria a,
+  .boton, .boton-comprar, button,
+  .tarjeta, .tarjeta img, .categoria,
+  .imagen-portada img, .whatsapp-flotante { transition: none; }
+}
